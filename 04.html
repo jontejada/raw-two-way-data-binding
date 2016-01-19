@@ -7,6 +7,32 @@
       // Challenge #1
       // start with the code from 03.html
       // whenever an input is changed, also change any other field bound to the same variable
+
+      document.addEventListener('DOMContentLoaded', function(){
+
+        var arr = document.querySelectorAll('input[data-bind]');
+
+        for (i = 0; i<arr.length; i++){ 
+          var db = arr[i].getAttribute('data-bind');
+          console.log(db);
+          document.querySelector('input[data-bind=' + db + ']').addEventListener('keyup', function (e) {
+          console.log(e.target.value)
+          window[db] = e.target.value;
+          document.querySelector('span[data-bind=' + db + ']').innerHTML = window[db];
+        })
+
+          
+          // window[db] = arr[i].value;
+
+          // console.log(window[db]);
+          // var span = document.querySelector('span[data-bind=' + db + ']');
+          // span.innerHTML = window[db]
+          // // console.log(document.querySelector('span[data-bind]'));
+        }
+
+
+      })
+
     </script>
   </head>
   <body>

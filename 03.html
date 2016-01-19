@@ -8,9 +8,21 @@
       // on page load
       // use document.querySelectorAll to find all elements with the data-bind attribute
 
+      document.addEventListener('DOMContentLoaded', function(){
+        
+        // console.log(document.querySelectorAll('[data-bind]')[0].value);
+        var arr = document.querySelectorAll('input[data-bind]');
+        for (i = 0; i<arr.length; i++){
+          console.log(arr[i].getAttribute('data-bind'));  
+          var db = arr[i].getAttribute('data-bind');
+          window[db] = arr[i].value;
+        }
+      })
+
       // Challenge #2
       // on page load
       // print out the value of all of the data-bind attributes
+
 
       // Challenge #3
       // on page load
@@ -27,14 +39,14 @@
       <legend>Pizza Size</legend>
       <p>
         <label for="pizza-size">What size would you like your pizza?</label>
-        <input type="text" id="pizza-size" name="size" value="" data-bind="pizzaSize">
+        <input type="text" id="pizza-size" name="size" value="10" data-bind="pizzaSize">
       </p>
     </fieldset>
     <fieldset>
       <legend>Crust</legend>
       <p>
         <label for="pizza-crust">What crust would you like your pizza?</label>
-        <input type="text" id="pizza-crust" name="size" value="" data-bind="pizzaCrust">
+        <input type="text" id="pizza-crust" name="size" value="2" data-bind="pizzaCrust">
       </p>
     </fieldset>
   </body>

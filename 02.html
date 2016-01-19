@@ -8,6 +8,15 @@
       // on page load
       // set window.pizzaSize equal to "large"
 
+      document.addEventListener('DOMContentLoaded', function () {
+      window.pizzaSize = "large"
+      setInterval(function () {
+      document.querySelector('input').value = window.pizzaSize
+      document.querySelector('span').innerHTML = window.pizzaSize
+    }, 0)
+  })
+
+
       // Challenge #2
       // on page load
       // set the value of the pizza-size input element to the value of window.pizzaSize

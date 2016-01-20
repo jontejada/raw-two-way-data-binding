@@ -20,24 +20,24 @@
           })
         }
 
-        // var stuff = ['pizzaSize', 'pizzaCrust', 'pizzaSize2', 'pizzaCrust2'];
-        // for (var j = 0; j<stuff.length; j++) {
-        //   window[stuff[j]]=10;
-        //   var str = stuff[j];
-        //   window.setInterval(function(){
-        //     console.log(str);
-        //     document.querySelector('span[data-bind=' + str + ']').innerHTML = window[str];
-        //   }, 1000)
-        // }
-        window.pizzaSize = "";
-        window.pizzaSize2 = "";
-        window.pizzaCrust = "";
-        window.pizzaCrust2 = "";
-        var someInterval = window.setInterval(myCallback, 1000);
-        function myCallback(){
-          document.querySelector('span[data-bind]').innerHTML = window.pizzaSize;
-          document.querySelector('input[data-bind]').value = window.pizzaSize;
+        var stuff = ['pizzaSize', 'pizzaCrust', 'pizzaSize2', 'pizzaCrust2'];
+        for (var j = 0; j<stuff.length; j++) {
+          window[stuff[j]]=10;
+          var str = stuff[j];
+          window.setInterval(function(){
+            console.log(str);
+            document.querySelector('span[data-bind=' + str + ']').innerHTML = window[str];
+          }, 1000)
         }
+        // window.pizzaSize = "";
+        // window.pizzaSize2 = "";
+        // window.pizzaCrust = "";
+        // window.pizzaCrust2 = "";
+        // var someInterval = window.setInterval(myCallback, 1000);
+        // function myCallback(){
+        //   document.querySelector('span[data-bind]').innerHTML = window.pizzaSize;
+        //   document.querySelector('input[data-bind]').value = window.pizzaSize;
+        // }
       })
     </script>
   </head>
